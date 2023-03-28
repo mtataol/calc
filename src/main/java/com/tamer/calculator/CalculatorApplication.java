@@ -1,3 +1,6 @@
+/**
+ * Main Spring Application.
+ */
 package com.tamer.calculator;
 
 import org.springframework.boot.SpringApplication;
