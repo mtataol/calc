@@ -55,7 +55,7 @@ pipeline {
         stage("Deploy") {
             steps {
                 withCredentials([usernamePassword(credentialsId: 'tamerspc', passwordVariable: 'pass', usernameVariable: 'user')]) {
-                    sh "sshpass -p $pass ssh -o StrictHostKeyChecking=no tamer@192.168.1.39 docker run -d --name auto-deployed mtataol/calculator"
+                    sh "sshpass -p $pass ssh -o StrictHostKeyChecking=no tamer@192.168.1.39 docker run -d --name auto-deployed -p 8080:8080 mtataol/calculator"
                 }
             }
         }
